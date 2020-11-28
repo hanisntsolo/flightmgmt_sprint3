@@ -45,6 +45,7 @@
     ]
   },
   "devDependencies": {
+    "@material-ui/styles": "^4.11.1",
     "redux-devtools": "^3.7.0"
   }
 }
