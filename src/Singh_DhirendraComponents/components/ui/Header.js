@@ -10,6 +10,8 @@ import logo from '../../assets/Airplane_PNG_Clipart-421.svg';
 import { Link } from 'react-router-dom';
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import { withRouter } from 'react-router';
+import AuthenticationService from "../Authentication/AuthenticationService";
 
 const useStyles = makeStyles(
     theme =>({
@@ -36,6 +38,8 @@ const useStyles = makeStyles(
     })
 );
 export default function Header(props) {
+  const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
+  console.log(isUserLoggedIn);
   const classes = useStyles();
   //Do not delete this piece of code
   // const [value, setValue] = useState(0);
@@ -68,7 +72,7 @@ export default function Header(props) {
         {name: "Popular Queries", link:"/faq/popular-queries", activeIndex: 2 ,selectedIndex:3}
   ]
   const routes = [
-    {name: "Home", link:"/", activeIndex:0},
+    {name: "Home", link:"/home", activeIndex:0},
     {name: "Search", link:"/search", activeIndex:1},
     { name: "FAQ's",
       link:"/faq",
@@ -78,6 +82,8 @@ export default function Header(props) {
       mouseOver: event=>handleClick(event) },
     {name: "About", link:"/about", activeIndex:3},
     {name: "Contact Us", link:"/contactus", activeIndex:4}
+    // {name: "Login", link: "/login", activeIndex: 5}
+    // {name: "Logout", link: "logout", activeIndex: 6}
   ]
 
 
@@ -159,48 +165,69 @@ export default function Header(props) {
             <Button disableRipple component={Link} to="/" className={classes.logoContainer} onClick={() => props.setValue(0)}>
               <img alt="company logo" className={classes.logo} src={logo}/>
             </Button>
-            <Tabs indicatorColor={"primary"} value={props.value} onChange={handleChange} className={classes.tabContainer}>
-              {routes.map((route, index) => (
-                  <Tab key={`${route}${index}`}
-                       className={classes.tab}
-                       component={Link}
-                       to={route.link}
-                       label={route.name}
-                       aria-owns={route.ariaOwns}
-                       aria-haspopup={route.ariaPopup}
-                       onMouseOver={route.mouseOver}/>
-              ))}
-              {/*<Tab className={classes.tab} component={Link} to="/" label="Home"/>*/}
-              {/*<Tab className={classes.tab} component={Link} to="/search" label="Search"/>*/}
-              {/*<Tab*/}
-              {/*    aria-owns={anchorEl ? "faq-menu" : undefined}*/}
-              {/*    aria-haspopup={anchorEl ? "true" : undefined}*/}
-              {/*    className={classes.tab}*/}
-              {/*    component={Link} to="/faq"*/}
-              {/*    onMouseOver={event=>handleClick(event)}*/}
-              {/*    label="FAQ's"/>*/}
-              {/*<Tab className={classes.tab} component={Link} to="/about" label="About"/>*/}
-              {/*<Tab className={classes.tab} component={Link} to="/contactus" label="Contact Us"/>*/}
-            </Tabs>
-            <Button variant="contained">
-              Logout
-            </Button>
-            <Menu id="faq-menu"
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  MenuListProps={{onMouseLeave : handleClose}}
-                  elevation={0}>
-              { menuOptions.map((option,i) => (
-                <MenuItem key={option}
-                    component={Link}
-                    to={option.link}
-                    onClick={(event)=>{handleMenuItemClick(event, i); props.setValue(2); handleClose()}}
-                    selected={i === props.selectedIndex}>
-                  {option.name}
-                </MenuItem>
-              ))}
-            </Menu>
+            {isUserLoggedIn && <div>
+              <Tabs indicatorColor={"primary"} value={props.value}
+                    onChange={handleChange} className={classes.tabContainer}>
+                {routes.map((route, index) => (
+                    <Tab key={`${route}${index}`}
+                         className={classes.tab}
+                         component={Link}
+                         to={route.link}
+                         label={route.name}
+                         aria-owns={route.ariaOwns}
+                         aria-haspopup={route.ariaPopup}
+                         onMouseOver={route.mouseOver}/>
+                ))}
+                {/*<Tab className={classes.tab} component={Link} to="/" label="Home"/>*/}
+                {/*<Tab className={classes.tab} component={Link} to="/search" label="Search"/>*/}
+                {/*<Tab*/}
+                {/*    aria-owns={anchorEl ? "faq-menu" : undefined}*/}
+                {/*    aria-haspopup={anchorEl ? "true" : undefined}*/}
+                {/*    className={classes.tab}*/}
+                {/*    component={Link} to="/faq"*/}
+                {/*    onMouseOver={event=>handleClick(event)}*/}
+                {/*    label="FAQ's"/>*/}
+                {/*<Tab className={classes.tab} component={Link} to="/about" label="About"/>*/}
+                {/*<Tab className={classes.tab} component={Link} to="/contactus" label="Contact Us"/>*/}
+              </Tabs>
+              <Menu id="faq-menu"
+                    anchorEl={anchorEl}
+                    open={open}
+                    onClose={handleClose}
+                    MenuListProps={{onMouseLeave : handleClose}}
+                    elevation={0}>
+                { menuOptions.map((option,i) => (
+                    <MenuItem key={option}
+                              component={Link}
+                              to={option.link}
+                              onClick={(event)=>{handleMenuItemClick(event, i); props.setValue(2); handleClose()}}
+                              selected={i === props.selectedIndex}>
+                      {option.name}
+                    </MenuItem>
+                ))}
+              </Menu>
+            </div>}
+            {!isUserLoggedIn && <div>
+              <Button variant="contained"
+                      onClick={AuthenticationService.logout}
+                      component={Link}
+                      to={"/login"}
+                      style={{
+                        position: "end",
+                        justifyContent: "flex-end"
+                      }}>
+                Login
+              </Button>
+            </div>}
+            {isUserLoggedIn && <div>
+              <Button variant="contained"
+                      onClick={AuthenticationService.logout}
+                      component={Link}
+                      to={"/logout"}>
+                Logout
+              </Button>
+            </div>}
+
           </Toolbar>
         </AppBar>
         <div className={classes.toolbarMargin}/>

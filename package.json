@@ -46,6 +46,8 @@
   },
   "devDependencies": {
     "@material-ui/styles": "^4.11.1",
+    "@storybook/addon-actions": "^6.1.9",
+    "@storybook/react": "^6.1.9",
     "redux-devtools": "^3.7.0"
   }
 }

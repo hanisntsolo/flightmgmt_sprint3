@@ -17,7 +17,7 @@ const useStyles = makeStyles(theme => ({
   },
   mainContainer : {
     position : "absolute",
-
+    justifyContent : "flex-end"
   },
   link : {
     color : "white",
@@ -34,12 +34,16 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(1),
     },
   },
+  plane : {
+    alignItems : "end",
+    width : "50em"
+  },
 }))
 
 export default function Footer(props) {
   const classes = useStyles()
   return <footer className={classes.footer}>
-    <Grid container justify="center" className={classes.mainContainer}>
+    <Grid container className={classes.mainContainer}>
       <Grid item className={classes.gridItem}>
         <Grid container direction="column" spacing={3}>
           <Grid item
@@ -133,6 +137,13 @@ export default function Footer(props) {
     {/*    <Button color={classes.link.color}>Made with Love by Capgeminites</Button>*/}
     {/*  </div>*/}
     {/*</Grid>*/}
-    <img alt="flight-logo" src={footerAdornment} className={classes.adornment}/>
+    <div className={classes.plane}>
+      <img alt="flight-logo"
+           width={400}
+           src={footerAdornment}
+           className={classes.plane}
+           style={{padding: "10px"}}/>
+    </div>
+    <span className="text-muted"><p style={{padding: "20px", bottom : 0, position : "base", height : "50px"}}>All Rights Reserved 2020@Capgemini Services</p></span>
   </footer>
 }

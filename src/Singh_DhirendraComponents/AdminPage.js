@@ -7,7 +7,10 @@ class AdminPage extends React.Component{
   render() {
     return(
         <div>
-
+          <CreateAirport/>
+          <GetAirport/>
+          <UpdateAirport/>
+          <DeleteAirport/>
         </div>
     );
   }
