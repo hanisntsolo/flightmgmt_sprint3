@@ -39,7 +39,7 @@ const useStyles = makeStyles(
 );
 export default function Header(props) {
   const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
-  console.log(isUserLoggedIn);
+  // console.log(isUserLoggedIn);
   const classes = useStyles();
   //Do not delete this piece of code
   // const [value, setValue] = useState(0);
@@ -81,7 +81,7 @@ export default function Header(props) {
       ariaPopup:anchorEl ? "true" : undefined,
       mouseOver: event=>handleClick(event) },
     {name: "About", link:"/about", activeIndex:3},
-    {name: "Contact Us", link:"/contactus", activeIndex:4}
+    {name: "Add Airports", link:"/update", activeIndex:4}
     // {name: "Login", link: "/login", activeIndex: 5}
     // {name: "Logout", link: "logout", activeIndex: 6}
   ]
