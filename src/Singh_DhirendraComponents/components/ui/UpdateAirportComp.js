@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import AirportService from "../../AirportApi/AirportService";
-
+import { withRouter } from "react-router";
 class UpdateAirportComp extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       id : this.props.match.params.id,
       airportName : '',
@@ -31,9 +31,9 @@ class UpdateAirportComp extends Component {
     return errors
   }
   onSubmit(values) {
-    if (this.state.id === -1) {
+    if (this.state.id === null) {
       AirportService.createAirport({
-        id: this.state.id,
+        // id: this.state.id,
         airportName: values.airportName,
         airportLocation: values.airportLocation
       }).then(() => this.props.history.push('/update'))
@@ -48,15 +48,19 @@ class UpdateAirportComp extends Component {
     }
   }
   componentDidMount() {
-    AirportService.updateAirport(this.state.id)
-    .then(
-        response =>
-    // console.log(response)
-            this.setState({
-              airportName : response.data.airportName,
-              airportLocation : response.data.airportLocation
-            })
-    )
+    if (this.state.id === null) {
+      return
+    } else {
+      AirportService.retrieveAirport(this.state.id)
+      .then(
+          response =>
+              // console.log(response)
+              this.setState({
+                airportName : response.data.airportName,
+                airportLocation : response.data.airportLocation
+              })
+      )
+    }
   }
 
   render() {

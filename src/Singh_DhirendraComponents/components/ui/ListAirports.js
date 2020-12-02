@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import AirportService from "../../AirportApi/AirportService";
+import { withRouter } from "react-router";
 import Button from "@material-ui/core/Button";
 import {Link} from "react-router-dom";
 
@@ -46,17 +47,18 @@ class ListAirports extends Component {
     this.deleteAirportClicked = this.deleteAirportClicked.bind(this);
     this.refreshAirports = this.refreshAirports.bind(this);
   }
-  addAirportClicked(id) {
-    console.log('update' + id)
+  addAirportClicked() {
+    // console.log('update' + id)
     // const { history } = this.props;
     // history.push(`/update/${id}`);
-    this.props.history.push(`/update/${id}`);
+    this.props.history.push(`/update/-1`)
+    // this.props.history.push(`/update/${id}`)
   }
   updateAirportClicked(id) {
     console.log('update' + id)
     // const { history } = this.props;
     // history.push(`/update/${id}`);
-    this.props.history.push(`/update/${id}`);
+    this.props.history.push(`/update/${id}`)
   }
   deleteAirportClicked(id) {
     // console.log(id);
@@ -121,17 +123,18 @@ class ListAirports extends Component {
                       {/*    Update*/}
                       {/*  </Button>*/}
                       {/*</td>*/}
-                      <td><button className="btn btn-warning" onClick={()=>{this.deleteAirportClicked(airport.airportId)}}>Delete</button></td>
+                      <td><button className="btn btn-danger" onClick={()=>{this.deleteAirportClicked(airport.airportId)}}>Delete</button></td>
                     </tr>
                   )}
               </tbody>
             </table>
             <div className="row">
-              <button className="btn btn-success" onClick={this.addAirportClicked}>ADD</button>
+              <button className="btn btn-success" onClick={this.addAirportClicked}>Add Airport</button>
             </div>
           </div>
         </div>
     );
   }
 }
-export default ListAirports;
+export default withRouter(ListAirports);
+// export default ListAirports;

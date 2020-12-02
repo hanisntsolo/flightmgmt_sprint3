@@ -4,6 +4,9 @@ class AirportService {
   retrieveAllAirports() {
     return axios.get('http://localhost:8080/airports/all');
   }
+  retrieveAirport(id) {
+    return axios.get(`http://localhost:8080/airports/getAirport/${id}`)
+  }
   deleteAirport(id) {
     return axios.delete(`http://localhost:8080/airports/deleteAirport/${id}`);
   }

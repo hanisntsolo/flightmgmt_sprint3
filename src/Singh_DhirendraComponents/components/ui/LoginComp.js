@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
+import { withRouter } from "react-router";
 import AuthenticationService from "../Authentication/AuthenticationService.js";
 
 // const useStyles = makeStyles((theme) => ({
@@ -45,7 +46,7 @@ class LoginComp extends Component{
     if (this.state.username === 'admin@admin' && this.state.password ==='test') {
       // console.log('Login Successful')
       AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
-      this.props.history.push(`/home/${this.state.username}`)
+      this.props.history.push("/home")
       // this.setState({showSuccessMessage :true})
       // this.setState({hasLoginFailed : false})
 
@@ -88,6 +89,7 @@ class LoginComp extends Component{
               <input name="password" type="password" className="form-control"
                      id="exampleInputPassword1"
                      value={this.state.password}
+                     placeholder="Password"
                      onChange={this.handleChange}/>
             </div>
             <div className="form-group form-check">
@@ -123,4 +125,7 @@ class LoginComp extends Component{
 //     return null
 //   }
 // }
-export default LoginComp;
+export default withRouter(LoginComp);
+// export default LoginComp;
+// Example
+// const ShowTheLocationWithRouter = withRouter(ShowTheLocation);
