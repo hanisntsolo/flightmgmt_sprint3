@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {ErrorMessage, Field, Form, Formik} from "formik";
 import AirportService from "../../AirportApi/AirportService";
 import { withRouter } from "react-router";
-class UpdateAirportComp extends Component {
+class CreateAirportComp extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -36,38 +36,32 @@ class UpdateAirportComp extends Component {
       airportName: values.airportName,
       airportLocation: values.airportLocation
     }
-    if (this.state.id === null) {
       AirportService.createAirport(airPort)
       .then(() => this.props.history.push('/update'))
       console.log(values);
-    } else {
-      AirportService.updateAirport(this.state.id, airPort)
-      .then(() => this.props.history.push('/update'))
-      console.log(values);
     }
-  }
-  componentDidMount() {
-    if (this.state.id === null) {
-      return
-    } else {
-      AirportService.retrieveAirport(this.state.id)
-      .then(
-          response =>
-              // console.log(response)
-              this.setState({
-                airportName : response.data.airportName,
-                airportLocation : response.data.airportLocation
-              })
-      )
-    }
-  }
+  // componentDidMount() {
+  //   if (this.state.id === null) {
+  //     return
+  //   } else {
+  //     AirportService.retrieveAirport(this.state.id)
+  //     .then(
+  //         response =>
+  //             // console.log(response)
+  //             this.setState({
+  //               airportName : response.data.airportName,
+  //               airportLocation : response.data.airportLocation
+  //             })
+  //     )
+  //   }
+  // }
 
   render() {
     let {airportName, airportLocation} = this.state;
     // let airportLocation = this.state.airportLocation;
     return(
         <div>
-          <h1>Update Airport</h1>
+          <h1>Add Airport</h1>
           <div className="container">
             <Formik
                 initialValues={{airportName,airportLocation}}
@@ -97,7 +91,8 @@ class UpdateAirportComp extends Component {
           </div>
           <div>Update Airport for id - {this.props.match.params.id}</div>
         </div>
-          );
+    );
   }
 }
-export default withRouter(UpdateAirportComp);
+
+export default withRouter(CreateAirportComp);

@@ -48,10 +48,10 @@ class ListAirports extends Component {
     this.refreshAirports = this.refreshAirports.bind(this);
   }
   addAirportClicked() {
-    // console.log('update' + id)
+    console.log('update')
     // const { history } = this.props;
     // history.push(`/update/${id}`);
-    this.props.history.push(`/update/-1`)
+    this.props.history.push('/create')
     // this.props.history.push(`/update/${id}`)
   }
   updateAirportClicked(id) {

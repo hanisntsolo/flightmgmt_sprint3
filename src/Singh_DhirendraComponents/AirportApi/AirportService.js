@@ -14,7 +14,7 @@ class AirportService {
     return axios.put(`http://localhost:8080/airports/updateAirport/${id}`, resp);
   }
   createAirport(resp) {
-    return axios.post('/airports/newAirport', resp);
+    return axios.post('http://localhost:8080/airports/createAirportNew', resp);
   }
 }
 export default new AirportService();

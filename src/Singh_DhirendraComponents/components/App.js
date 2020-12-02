@@ -15,6 +15,7 @@ import ListAirports from "./ui/ListAirports";
 import LogoutComp from "./ui/LogoutComp";
 import AuthenticatedRoute from "./Authentication/AuthenticatedRoute";
 import UpdateAirportComp from "./ui/UpdateAirportComp";
+import CreateAirportComp from "./ui/CreateAirportComp";
 
 function App() {
   //Global Declaration to be used in header/footer
@@ -40,6 +41,7 @@ function App() {
               <AuthenticatedRoute exact path="/faq/popular-queries" component={()=><div style={{height:"2000px"}}>FAQ'S Popular Queries</div>}/>
               {/*<Route exact path="/about" component={()=><div style={{height:"2000px"}}>ABOUT</div>}/>*/}
               <AuthenticatedRoute exact path="/about" component={()=><div style={{height:"2000px"}}><About/></div>}/>
+              <AuthenticatedRoute exact path="/create" component={CreateAirportComp}/>
               <AuthenticatedRoute exact path="/update/:id" component={UpdateAirportComp}/>
               <AuthenticatedRoute exact path="/update" component={()=><div style={{height:"2000px"}}><ListAirports/></div>}/>
               <Route exact path="/login" component={()=><div style={{height:"2000px"}}><LoginComp/></div>}/>
