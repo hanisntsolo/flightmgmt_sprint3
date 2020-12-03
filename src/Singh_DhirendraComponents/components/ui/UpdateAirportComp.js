@@ -78,18 +78,52 @@ class UpdateAirportComp extends Component {
                 onSubmit={this.onSubmit}>
               {
                 (props => (
+                    // <Form>
+                    //   <ErrorMessage name="airportName" component="div" className="alert alert-warning"/>
+                    //   <ErrorMessage name="airportLocation" component="div" className="alert alert-warning"/>
+                    //   <fieldset className="form-group">
+                    //     <label>Airport Name</label>
+                    //     <Field className="form-control" type="text" name="airportName"/>
+                    //   </fieldset>
+                    //   <fieldset className="form-group">
+                    //     <label>Airport Location</label>
+                    //     <Field className="form-control" type="text" name="airportLocation"/>
+                    //   </fieldset>
+                    //   <button className="btn btn-success" type="submit">Save</button>
+                    // </Form>
                     <Form>
                       <ErrorMessage name="airportName" component="div" className="alert alert-warning"/>
                       <ErrorMessage name="airportLocation" component="div" className="alert alert-warning"/>
+                      <div className="form-group">
+                        <fieldset className="form-group">
+                          <div className="input-group mb-3">
+                            <div className="input-group-append">
+                              <label htmlFor="airportName"><span className="input-group-text">Airport Name</span></label>
+                            </div>
+                            <Field id="airportName" className="form-control" type="text" name="airportName"/>
+                          </div>
+                        </fieldset>
+                      </div>
                       <fieldset className="form-group">
-                        <label>Airport Name</label>
-                        <Field className="form-control" type="text" name="airportName"/>
+                        <div className="input-group mb-3">
+                          <div className="input-group-append">
+                            <label for="airportLocation"><span className="input-group-text">Airport Location</span></label>
+                          </div>
+                          <Field id="airportLocation" className="form-control" type="text" name="airportLocation"/>
+                        </div>
                       </fieldset>
-                      <fieldset className="form-group">
-                        <label>Airport Location</label>
-                        <Field className="form-control" type="text" name="airportLocation"/>
-                      </fieldset>
-                      <button className="btn btn-success" type="submit">Save</button>
+                      <div className="input-group mb-3 ">
+                        <button className="btn btn-success btn-block form-control" type="submit">Update</button>
+                        <div className="input-group-append">
+                          {/*<button className="btn btn-warning btn-block" type="reset">Reset</button>*/}
+                        </div>
+                      </div>
+                      {/*<div className="input-group mb-3 ">*/}
+                      {/*  <div className="input-group-append">*/}
+                      {/*  <button className="btn btn-success btn-block " type="submit">Save</button>*/}
+                      {/*  </div>*/}
+                      {/*    <button className="btn btn-warning btn-block form-control" type="reset">Reset</button>*/}
+                      {/*</div>*/}
                     </Form>
                 ))
               }

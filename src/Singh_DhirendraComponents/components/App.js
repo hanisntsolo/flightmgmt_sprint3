@@ -29,28 +29,34 @@ function App() {
           <BrowserRouter>
             <Header value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
             <Switch>
-              {/*<Route exact path="/" component={()=><div style={{height:"2000px"}}>HOME</div>}/>*/}
-              <AuthenticatedRoute exact path="/home" component={()=><div style={{height:"2000px"}}><HomeComp/></div>}/>
-              {/*<Route exact path="/search" component={()=><div style={{height:"2000px"}}>SEARCH</div>}/>*/}
-              <AuthenticatedRoute exact path="/search" component={()=><div style={{height:"2000px"}}><FlightCardList/></div>}/>
-              {/*<Route exact path="/faq" component={()=><div style={{height:"2000px"}}>FAQ'S</div>}/>*/}
-              <AuthenticatedRoute exact path="/faq" component={()=><div style={{height:"2000px"}}><HelpComp/></div>}/>
-              <AuthenticatedRoute exact path="/faq/pricing" component={()=><div style={{height:"2000px"}}>FAQ's Pricing</div>}/>
-              <AuthenticatedRoute exact path="/faq/ticket-cancellation" component={()=><div style={{height:"2000px"}}>FAQ'S Ticket Cancellation</div>}/>
-              <AuthenticatedRoute exact path="/faq/booking" component={()=><div style={{height:"2000px"}}>FAQ'S Booking</div>}/>
-              <AuthenticatedRoute exact path="/faq/popular-queries" component={()=><div style={{height:"2000px"}}>FAQ'S Popular Queries</div>}/>
-              {/*<Route exact path="/about" component={()=><div style={{height:"2000px"}}>ABOUT</div>}/>*/}
-              <AuthenticatedRoute exact path="/about" component={()=><div style={{height:"2000px"}}><About/></div>}/>
-              <AuthenticatedRoute exact path="/create" component={CreateAirportComp}/>
-              <AuthenticatedRoute exact path="/update/:id" component={UpdateAirportComp}/>
-              <AuthenticatedRoute exact path="/update" component={()=><div style={{height:"2000px"}}><ListAirports/></div>}/>
-              <Route exact path="/login" component={()=><div style={{height:"2000px"}}><LoginComp/></div>}/>
-              <AuthenticatedRoute exact path="/logout" component={()=><div style={{height:"2000px"}}><LogoutComp/></div>}/>
-              {/*<AuthenticatedRoute exact path="/update/:id" component={()=><div style={{height:"2000px"}}><UpdateAirportComp/></div>}/>*/}
-              <Route exact path="/signup" component={()=><div style={{height:"2000px"}}>SIGNUP</div>}/>
-              <Route exact component={()=><div style={{height:"2000px"}}><ErrorComp/></div>}/>
+              <div>
+                {/*<Route exact path="/" component={()=><div style={{height:"2000px"}}>HOME</div>}/>*/}
+                <AuthenticatedRoute exact path="/home" component={()=><div style={{height:"2000px"}}><HomeComp/></div>}/>
+                {/*<Route exact path="/search" component={()=><div style={{height:"2000px"}}>SEARCH</div>}/>*/}
+                <AuthenticatedRoute exact path="/search" component={()=><div style={{height:"2000px"}}><FlightCardList/></div>}/>
+                {/*<Route exact path="/faq" component={()=><div style={{height:"2000px"}}>FAQ'S</div>}/>*/}
+                <AuthenticatedRoute exact path="/faq" component={()=><div style={{height:"2000px"}}><HelpComp/></div>}/>
+                <AuthenticatedRoute exact path="/faq/pricing" component={()=><div style={{height:"2000px"}}>FAQ's Pricing</div>}/>
+                <AuthenticatedRoute exact path="/faq/ticket-cancellation" component={()=><div style={{height:"2000px"}}>FAQ'S Ticket Cancellation</div>}/>
+                <AuthenticatedRoute exact path="/faq/booking" component={()=><div style={{height:"2000px"}}>FAQ'S Booking</div>}/>
+                <AuthenticatedRoute exact path="/faq/popular-queries" component={()=><div style={{height:"2000px"}}>FAQ'S Popular Queries</div>}/>
+                {/*<Route exact path="/about" component={()=><div style={{height:"2000px"}}>ABOUT</div>}/>*/}
+                <AuthenticatedRoute exact path="/about" component={()=><div style={{height:"2000px"}}><About/></div>}/>
+                <AuthenticatedRoute exact path="/create" component={CreateAirportComp}/>
+                <AuthenticatedRoute exact path="/update/:id" component={UpdateAirportComp}/>
+                <AuthenticatedRoute exact path="/update" component={()=><div style={{height:"2000px"}}><ListAirports/></div>}/>
+                <Route exact path="/login" component={()=><div style={{height:"2000px"}}><LoginComp/></div>}/>
+                <AuthenticatedRoute exact path="/logout" component={()=><div style={{height:"2000px"}}><LogoutComp/></div>}/>
+                {/*<AuthenticatedRoute exact path="/update/:id" component={()=><div style={{height:"2000px"}}><UpdateAirportComp/></div>}/>*/}
+                <Route exact path="/signup" component={()=><div style={{height:"2000px"}}>SIGNUP</div>}/>
+                <Route exact path component={()=><div style={{height:"2000px"}}><ErrorComp/></div>}/>
+              </div>
             </Switch>
-            <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
+            <section>
+              <div>
+                <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
+              </div>
+            </section>
           </BrowserRouter>
         </ThemeProvider>
       </div>
