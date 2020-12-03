@@ -133,8 +133,8 @@ class ListAirports extends Component {
           <section>
           <div className="container">
             <div className="card-header">
-              <div className="card">
-              <h1>List Airports</h1>
+              <div className="card container">
+              <h1 className="text-lg-right">List of Airports Currently Functional</h1>
           </div>
           {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
           <div className="container">
