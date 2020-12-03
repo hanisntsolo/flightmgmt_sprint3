@@ -134,7 +134,7 @@ class ListAirports extends Component {
           <div className="container">
             <div className="card-header">
               <div className="card container">
-              <h1 className="text-lg-right">List of Airports Currently Functional</h1>
+              <h1 className="text-lg-right display-4">List of Airports Currently Functional</h1>
           </div>
           {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
           <div className="container">
