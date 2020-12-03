@@ -149,7 +149,7 @@ class ListAirports extends Component {
                   <th>Delete</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className="text-left">
                   {
                     this.state.airports.map(
                       airport=>
@@ -173,12 +173,29 @@ class ListAirports extends Component {
               </div>
             </div>
           </div>
-            <div className="row">
-              <button className="btn btn-success" onClick={this.addAirportClicked}>Add Airport</button>
-            </div>
+            <section id="actions" className="py-4 mb-4 bg-light">
+              <div className="container">
+                <div className="row">
+                  <div className="col-md-2">
+                    <button className="btn btn-primary btn-block" data-toggle="modal" onClick={this.addAirportClicked}><i className="fas fa-plus"></i>
+                      <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-box-arrow-in-up-right"
+                           fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd"
+                              d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"/>
+                        <path fill-rule="evenodd"
+                              d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"/>
+                      </svg>
+                      Add Airport </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+            {/*<div className="row">*/}
+            {/*  <button className="btn btn-success" onClick={this.addAirportClicked}>Add Airport</button>*/}
+            {/*</div>*/}
           </div>
 {/*Pagination*/}
-          <div>
+          <section>
           <nav>
             <ul className="pagination">
               <li className="page-item">
@@ -198,7 +215,7 @@ class ListAirports extends Component {
             </li>
             </ul>
           </nav>
-          </div>
+          </section>
           </section>
         </div>
     );

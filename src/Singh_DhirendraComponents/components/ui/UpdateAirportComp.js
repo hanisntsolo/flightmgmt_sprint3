@@ -67,7 +67,7 @@ class UpdateAirportComp extends Component {
     // let airportLocation = this.state.airportLocation;
     return(
         <div>
-          <h1>Update Airport</h1>
+          <h1 className="display-1">Update Airport</h1>
           <div className="container">
             <Formik
                 initialValues={{airportName,airportLocation}}
@@ -94,6 +94,14 @@ class UpdateAirportComp extends Component {
                     <Form>
                       <ErrorMessage name="airportName" component="div" className="alert alert-warning"/>
                       <ErrorMessage name="airportLocation" component="div" className="alert alert-warning"/>
+                      <fieldset className="form-group">
+                        <div className="input-group mb-3">
+                          <div className="input-group-append">
+                            {/*<label htmlFor="airportName"><span className="input-group-text">Updating Airport with id : </span></label>*/}
+                          </div>
+                          <div htmlFor="airportName"><span className="alert alert-success input-group-text readonly">Updating Airport with id : {this.props.match.params.id}</span></div>
+                        </div>
+                      </fieldset>
                       <div className="form-group">
                         <fieldset className="form-group">
                           <div className="input-group mb-3">
@@ -129,7 +137,7 @@ class UpdateAirportComp extends Component {
               }
             </Formik>
           </div>
-          <div>Update Airport for id - {this.props.match.params.id}</div>
+          {/*<div>Update Airport for id - {this.props.match.params.id}</div>*/}
         </div>
           );
   }
