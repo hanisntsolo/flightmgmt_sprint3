@@ -3,6 +3,7 @@ import AirportService from "../../AirportApi/AirportService";
 import { withRouter } from "react-router";
 import Button from "@material-ui/core/Button";
 import {Link} from "react-router-dom";
+import Header from "./Header";
 
 class ListAirports extends Component {
   constructor(props) {
@@ -94,11 +95,22 @@ class ListAirports extends Component {
   render() {
     return(
         <div>
+          {/*Header*/}
+          <header id="main-header">
+            <div>
+              <div>
+                <div>
+                  <h1></h1>
+                </div>
+              </div>
+            </div>
+          </header>
           <h1>List Airports</h1>
           {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
-          <div class="container">
-            <table class="table">
-              <thead>
+          <div className="container">
+            <div className="table-responsive">
+            <table className="table table-hover">
+              <thead className="thead-dark">
                 <tr>
                   <th>Airport Identity Number</th>
                   <th>Airport Name</th>
@@ -128,10 +140,31 @@ class ListAirports extends Component {
                   )}
               </tbody>
             </table>
+          </div>
             <div className="row">
               <button className="btn btn-success" onClick={this.addAirportClicked}>Add Airport</button>
             </div>
           </div>
+{/*Pagination*/}
+          <nav>
+            <ul className="pagination">
+              <li className="page-item">
+                <a className="page-link" href="#">Previous</a>
+              </li>
+              <li className="page-item">
+                <a className="page-link" href="#">1</a>
+              </li>
+              <li className="page-item">
+              <a className="page-link" href="#">2</a>
+            </li>
+              <li className="page-item">
+              <a className="page-link" href="#">3</a>
+            </li>
+              <li className="page-item">
+              <a className="page-link" href="#">Next</a>
+            </li>
+            </ul>
+          </nav>
         </div>
     );
   }
