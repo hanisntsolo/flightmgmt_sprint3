@@ -177,6 +177,7 @@ class ListAirports extends Component {
           {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
           <div>
             <div className="table-responsive">
+              <font size="4">
             <table className="table table-hover">
               <thead className="thead-dark">
                 <tr>
@@ -229,7 +230,7 @@ class ListAirports extends Component {
                     </tr>
                   )}
               </tbody>
-            </table>
+            </table></font>
               </div>
             </div>
           </div>
