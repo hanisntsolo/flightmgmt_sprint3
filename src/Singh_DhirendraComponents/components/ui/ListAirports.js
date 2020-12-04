@@ -4,6 +4,8 @@ import { withRouter } from "react-router";
 import Button from "@material-ui/core/Button";
 import {Link} from "react-router-dom";
 import Header from "./Header";
+import UpdateFlightComp from "../../../Singh_ManishaComponents/FlightComponent/UpdateFlightComp";
+import CreateFlightComp from "../../../Singh_ManishaComponents/FlightComponent/CreateFlightComp";
 
 class ListAirports extends Component {
   constructor(props) {
@@ -134,7 +136,7 @@ class ListAirports extends Component {
           <div className="container">
             <div className="card-header">
               <div className="card container">
-              <h1 className="text-lg-right display-4">List of Airports Currently Functional</h1>
+              <h1 className="text-lg-right display-4">List of Currently Functional Airports</h1>
           </div>
           {this.state.message && <div className="alert alert-success">{this.state.message}</div>}
           <div className="container">
@@ -218,6 +220,7 @@ class ListAirports extends Component {
           </section>
           </section>
         </div>
+
     );
   }
 }

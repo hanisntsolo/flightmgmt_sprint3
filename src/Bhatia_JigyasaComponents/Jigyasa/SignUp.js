@@ -9,7 +9,6 @@ class SignUp extends Component {
       mobileNumber: "",
       email: "",
       password: "",
-      confirmPassword:"",
       userId: '',
       userType:'user',
     };
@@ -30,7 +29,6 @@ class SignUp extends Component {
       mobileNumber:this.state.mobileNumber,
       email:this.state.email,
       password:this.state.password,
-      confirmPassword:this.state.confirmPassword,
       userType:this.state.userType
     }
     let a = JSON.stringify(user);
@@ -69,19 +67,6 @@ class SignUp extends Component {
                 <input
                   type="password"
                   name="password"
-                  required="true"
-                  onChange={this.onChangeCtrl}
-                  />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <span className="badge badge-secondary">Confirm Password</span>
-              </td>
-              <td>
-                <input
-                  type="password"
-                  name="confirmPassword"
                   required="true"
                   onChange={this.onChangeCtrl}
                   />
