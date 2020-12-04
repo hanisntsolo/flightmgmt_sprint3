@@ -12,6 +12,7 @@ class CreateAirportComp extends Component {
     }
     this.onSubmit = this.onSubmit.bind(this);
     this.validate = this.validate.bind(this);
+    this.backClicked = this.backClicked.bind(this);
   }
   validate(values) {
     // let errors = {airportName: 'Airport Name should be Alphabetical', airportLocation: 'Airport Location should be Alphabetical'}
@@ -40,6 +41,13 @@ class CreateAirportComp extends Component {
       .then(() => this.props.history.push('/update'))
       console.log(values);
     }
+  backClicked() {
+    console.log('update')
+    // const { history } = this.props;
+    // history.push(`/update/${id}`);
+    this.props.history.push('/update')
+    // this.props.history.push(`/update/${id}`)
+  }
   // componentDidMount() {
   //   if (this.state.id === null) {
   //     return
@@ -62,6 +70,21 @@ class CreateAirportComp extends Component {
     return(
         <div>
           <h1 className="display-1">Add Airport</h1>
+          <section id="actions" className="py-4 mb-4 bg-light">
+            <div className="container">
+              <div className="row">
+                <div className="col-md-2">
+                  <button className="btn btn-outline-primary btn-block" data-toggle="modal" onClick={this.backClicked}><i className="fas fa-plus"></i>
+                    Go Back <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-arrow-90deg-left"
+                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd"
+                            d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
           <div className="container">
             <Formik
                 initialValues={{airportName,airportLocation}}

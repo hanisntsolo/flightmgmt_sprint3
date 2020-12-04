@@ -84,10 +84,10 @@ export default function Header(props) {
       ariaPopup:anchorEl ? "true" : undefined,
       mouseOver: event=>handleClick(event) },
     {name: "About", link:"/about", activeIndex:3},
-    {name: "Add Airports", link:"/update", activeIndex:4},
+    {name: "Admin", link:"/update", activeIndex:4},
     {name: "Your Bookings", link: "/user", activeIndex: 5},
-    {name: "Add flights", link: "/updateFlight", activeIndex: 6},
-    {name: "Schedule Flight", link: "/scheduleFlight", activeIndex: 7},
+    // {name: "Add flights", link: "/updateFlight", activeIndex: 6},
+    {name: "Schedule Flight", link: "/scheduleFlight", activeIndex: 6},
   ]
 
 
@@ -166,7 +166,7 @@ export default function Header(props) {
             <Typography variant="h5">
               BookMyFlight
             </Typography>
-            <Button disableRipple component={Link} to="/" className={classes.logoContainer} onClick={() => props.setValue(0)}>
+            <Button disableRipple component={Link} to="/home" className={classes.logoContainer} onClick={() => props.setValue(0)}>
               <img alt="company logo" className={classes.logo} src={logo}/>
             </Button>
             {isUserLoggedIn && <div>

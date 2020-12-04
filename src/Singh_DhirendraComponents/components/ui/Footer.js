@@ -121,16 +121,16 @@ export default function Footer(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item className={classes.gridItem}>
-        <Grid container direction="column" spacing={3}>
-          <Grid item
-                className={classes.link}
-                component={Link} to="/contactus"
-                onClick={()=>{props.setValue(4)}}>
-            Contact Us
-          </Grid>
-        </Grid>
-      </Grid>
+      {/*<Grid item className={classes.gridItem}>*/}
+      {/*  <Grid container direction="column" spacing={3}>*/}
+      {/*    <Grid item*/}
+      {/*          className={classes.link}*/}
+      {/*          component={Link} to="/contactus"*/}
+      {/*          onClick={()=>{props.setValue(4)}}>*/}
+      {/*      Contact Us*/}
+      {/*    </Grid>*/}
+      {/*  </Grid>*/}
+      {/*</Grid>*/}
     </Grid>
     {/*<Grid>*/}
     {/*  <div className={classes.madeBy}>*/}

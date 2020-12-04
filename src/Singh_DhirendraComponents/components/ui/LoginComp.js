@@ -36,9 +36,9 @@ class LoginComp extends Component{
     //test
     if (this.state.username === 'admin@admin' && this.state.password ==='test') {
       // console.log('Login Successful')
-      AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
-          // .then(() => this.props.history.push('/home'));
-      this.props.history.push('/home')
+      AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password)
+          .then(() => this.props.history.push('/home'));
+      // this.props.history.push('/home')
 
       // history.push('/home')
       // <Redirect to='/home'/>
