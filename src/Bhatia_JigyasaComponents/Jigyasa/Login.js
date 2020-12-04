@@ -18,31 +18,30 @@ class Login extends React.Component {
         });
     }
     // Jigyasa's code
-    // submitHandler(e) {
-    //     e.preventDefault()
-    //     axios.post('http://localhost:8080/user/validate', this.state)
-    //         .then(res => {
-    //             console.log(res)
-    //             if (res.status === 200) console.log("valid user");
-    //         })
-    //         .catch(error => {
-    //             console.log("Not a valid user");
-    //         })
-    // }
-    //Dhirendra code
     submitHandler(e) {
         e.preventDefault()
         axios.post('http://localhost:8080/user/validate', this.state)
-            .then((res) => {
-                if (res.status === 200) {
-                    console.log("valid user");
-                    this.props.history.push('/home')
-                }
+            .then(res => {
+                console.log(res)
+                if (res.status === 200) console.log("valid user");
             })
             .catch(error => {
-                alert("Not a valid user");
+                console.log("Not a valid user");
             })
     }
+    //Dhirendra code
+    // submitHandler(e) {
+    //     e.preventDefault()
+    //     axios.post('http://localhost:8080/user/validate', this.state)
+    //         .then((res) => {
+    //             if (res.status === 200) {
+    //                 console.log("valid user");
+    //             }
+    //         })
+    //         .catch(error => {
+    //             alert("Not a valid user");
+    //         })
+    // }
     render() {
         return (
             <center>
