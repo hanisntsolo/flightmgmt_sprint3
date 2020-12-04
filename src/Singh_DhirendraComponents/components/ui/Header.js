@@ -24,7 +24,7 @@ const useStyles = makeStyles(
       logoContainer : {
         padding : 0,
         "&:hover" : {
-          backgroundColor : "tranparent",
+          backgroundColor : "transparent",
         },
       },
       tabContainer: {
@@ -69,7 +69,10 @@ export default function Header(props) {
         {name: "Pricing", link:"/faq/pricing", activeIndex: 2 ,selectedIndex:1},
         {name: "Ticket Cancellation", link:"/faq/ticket-cancellation", activeIndex: 2 ,selectedIndex:2},
         {name: "Booking", link:"/faq/booking", activeIndex: 2 ,selectedIndex:3},
-        {name: "Popular Queries", link:"/faq/popular-queries", activeIndex: 2 ,selectedIndex:3}
+        {name: "Popular Queries", link:"/faq/popular-queries", activeIndex: 2 ,selectedIndex:4},
+        {name: "SignUp", link: "/signUpUser", activeIndex: 2 ,selectedIndex:5},
+        {name: "Login", link: "/loginUser", activeIndex: 2 ,selectedIndex:6}
+
   ]
   const routes = [
     {name: "Home", link:"/home", activeIndex:0},
@@ -81,9 +84,10 @@ export default function Header(props) {
       ariaPopup:anchorEl ? "true" : undefined,
       mouseOver: event=>handleClick(event) },
     {name: "About", link:"/about", activeIndex:3},
-    {name: "Add Airports", link:"/update", activeIndex:4}
-    // {name: "Login", link: "/login", activeIndex: 5}
-    // {name: "Logout", link: "logout", activeIndex: 6}
+    {name: "Add Airports", link:"/update", activeIndex:4},
+    {name: "Your Bookings", link: "/user", activeIndex: 5},
+    {name: "Add flights", link: "/updateFlight", activeIndex: 6},
+    {name: "Schedule Flight", link: "/scheduleFlight", activeIndex: 7},
   ]
 
 

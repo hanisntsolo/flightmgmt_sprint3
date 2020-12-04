@@ -1,0 +1,39 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/1556287.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.booking-form-box {
+    background-position: center;
+    background-color: skyblue;
+    max-width: 400px;
+    border: 2px solid #ced4da;
+    margin: 5% auto 0;
+}
+
+.booking-form {
+    padding: 5px;
+}
+
+.input-grp {
+    margin: 5px;
+}
+
+.radio-btn {
+    margin: 0 20px;
+}
+
+radio-btn .btn::after {
+    content: '';
+    height: 15px;
+    width: 15px;
+    top: -2px;
+    left: -1px;
+    background-color: #fff;
+    position: relative;
+    display: inline-block;
+    border: 3px solid #fff;
+    visibility: visible;
+    border-radius: 50%;
+}

@@ -1,0 +1,33 @@
+body {
+    background-image: url("https://wallpaperaccess.com/full/1556287.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.Booking-Header {
+    text-decoration-style: bold;
+    text-align: Center;
+    background-color: skyblue;
+}
+
+h5 {
+    text-decoration: underline;
+}
+
+.travellerDetails {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 15px 20px;
+    background-color: grey;
+}
+
+#form h3 {
+    margin: 20px;
+    border-bottom: 2px solid skyblue;
+    width: 210px;
+    padding: 5px;
+}

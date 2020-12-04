@@ -1,21 +1,9 @@
 import React, { Component } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import { withRouter } from "react-router";
-import AuthenticationService from "../Authentication/AuthenticationService.js";
+import {Link} from 'react-router-dom';
+import { Redirect } from 'react-router';
 
-// const useStyles = makeStyles((theme) => ({
-//   customPaper: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//     '& > *': {
-//       margin: theme.spacing(1),
-//       width: theme.spacing(16),
-//       height: theme.spacing(16),
-//     },
-//   },
-// }))
-// const classes = useStyles();
+import AuthenticationService from "../Authentication/AuthenticationService.js";
 
 class LoginComp extends Component{
   constructor(props) {
@@ -26,11 +14,14 @@ class LoginComp extends Component{
       hasLoginFailed : false,
       showSuccessMessage : false
     }
+    // const history = useHistory();
+
     // this.handlerUsernameChange = this.handlerUsernameChange.bind(this);
     // this.handlerPasswordChange = this.handlerPasswordChange.bind(this);
     this.handleChange = this.handleChange.bind(this)
     this.loginClicked = this.loginClicked.bind(this)
   }
+
   handleChange(e) {
     console.log(this.state)
     this.setState(
@@ -46,7 +37,12 @@ class LoginComp extends Component{
     if (this.state.username === 'admin@admin' && this.state.password ==='test') {
       // console.log('Login Successful')
       AuthenticationService.registerSuccessfulLogin(this.state.username, this.state.password);
-      this.props.history.push("/home")
+          // .then(() => this.props.history.push('/home'));
+      this.props.history.push('/home')
+
+      // history.push('/home')
+      // <Redirect to='/home'/>
+      //
       // this.setState({showSuccessMessage :true})
       // this.setState({hasLoginFailed : false})
 
@@ -66,9 +62,10 @@ class LoginComp extends Component{
   //   this.setState({password : e.target.value})
   // }
   render() {
+
     return(
         <div>
-          <h1>Login</h1>
+          <h1 className="ui-icon-key display-4">Login</h1>
           {/*<ShowInvalidCredentials hasLoginFailed={this.state.hasLoginFailed}/>*/}
           {/*<ShowValidCredentials showSuccessMessage={this.state.showSuccessMessage}/>*/}
           {this.state.hasLoginFailed && <div className="alert alert-danger" role="alert">Invalid Credentials</div>}
@@ -99,7 +96,7 @@ class LoginComp extends Component{
                   me out</label>
             </div>
             <button type="submit" className="btn btn-primary"
-            onClick={this.loginClicked}>Submit</button>
+            onClick={this.loginClicked}>Login</button>
           </form>
           {/*User Name<input type="text" name="username"/>*/}
           {/*  Password <input type="text" name="password"/>*/}
@@ -125,7 +122,7 @@ class LoginComp extends Component{
 //     return null
 //   }
 // }
-export default withRouter(LoginComp);
-// export default LoginComp;
+// export default withRouter(LoginComp);
+export default LoginComp;
 // Example
 // const ShowTheLocationWithRouter = withRouter(ShowTheLocation);
