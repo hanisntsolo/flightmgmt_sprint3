@@ -16,7 +16,7 @@ class ScheduleService {
         return axios.post('http://localhost:8080/scheduledFlight/newflight', scheduledFlight);
     }
 
-    updateScheduledFlight(scheduledFlight, entryNo){
+    updateScheduledFlight(entryNo, scheduledFlight ){
             return axios.put(`http://localhost:8080/scheduledFlight/updateFlight/${entryNo}` , scheduledFlight);
     }
 

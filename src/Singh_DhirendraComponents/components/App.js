@@ -22,11 +22,10 @@ import store from "../../Gupta_AnishaComponents/Anisha/redux/Store";
 import ListFlight from "../../Singh_ManishaComponents/FlightComponent/ListFlight";
 import CreateFlightComp from "../../Singh_ManishaComponents/FlightComponent/CreateFlightComp";
 import UpdateFlightComp from "../../Singh_ManishaComponents/FlightComponent/UpdateFlightComp";
-import ListViewComp from "../../Soni_SuchitaComponents/SuchitaComp/ListViewComp";
-import CreateSFComp from "../../Soni_SuchitaComponents/SuchitaComp/CreateSFComp";
-import UpdateComp from "../../Soni_SuchitaComponents/SuchitaComp/UpdateComp";
 import Login from "../../Bhatia_JigyasaComponents/Jigyasa/Login";
 import SignUp from "../../Bhatia_JigyasaComponents/Jigyasa/SignUp";
+import CreateNewComp from "../../Soni_SuchitaComponents/NewComponents/CreateNewComp";
+import ListViewComp from "../../Soni_SuchitaComponents/NewComponents/ListViewComp";
 
 function App() {
   //Global Declaration to be used in header/footer
@@ -62,8 +61,8 @@ function App() {
 
                   {/*Suchita Soni Routes*/}
                   <AuthenticatedRoute exact path="/scheduleFlight" component={()=><div style={{height:"1500px"}}><ListViewComp/></div>}/>
-                  <AuthenticatedRoute exact path="/schedule" component={CreateSFComp}/>
-                  <AuthenticatedRoute  path="/schedule/:entryNo" component={UpdateComp}/>
+                  <AuthenticatedRoute exact path="/schedule" component={CreateNewComp}/>
+                  {/*<AuthenticatedRoute  path="/schedule/:entryNo" component={UpdateComp}/>*/}
 
                   {/*Anisha Gupta Routes*/}
                   <AuthenticatedRoute exact path="/search" component={()=><div style={{height:"1500px"}}><SearchBox/></div>}/>
@@ -72,7 +71,7 @@ function App() {
                   {/*Singh Manisha Routes*/}
                   <AuthenticatedRoute exact path="/updateFlight/:flightId" component={UpdateFlightComp}/>
                   <AuthenticatedRoute  path="/createFlight" component={CreateFlightComp}/>
-                  <AuthenticatedRoute exact path="/updateFlight/:flightId" component={UpdateFlightComp}/>
+                  {/*<AuthenticatedRoute exact path="/updateFlight/:flightId" component={UpdateFlightComp}/>*/}
 
 
                   <Route exact path="/updateFlight" component={()=><div style={{height:"1500px"}}><ListFlight/></div>}/>

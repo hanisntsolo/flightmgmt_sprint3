@@ -11,36 +11,36 @@ class ListAirports extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      demo : [ {
-        "airportId": 1,
-        "airportName": "Sardar Vallabhbhai Patel International Airport",
-        "airportLocation": "Ahmedabad Gujrat"
-      },
-        {
-          "airportId": 2,
-          "airportName": "Chaudhary Charan Singh International Airport",
-          "airportLocation": "Lucknow Uttar Pradesh"
-        },
-        {
-          "airportId": 3,
-          "airportName": "Dr Babasaheb Ambedkar International Airport",
-          "airportLocation": "Nagpur Maharashtra"
-        },
-        {
-          "airportId": 4,
-          "airportName": "Chhatrapati Shivaji Maharaj International Airport",
-          "airportLocation": "Mumbai Maharashtra"
-        },
-        {
-          "airportId": 5,
-          "airportName": "Lal Bahadur Shastri International Airport",
-          "airportLocation": "Varanasi Uttar Pradesh"
-        },
-        {
-          "airportId": 6,
-          "airportName": "Chaudary Charan Singh Internation Airport",
-          "airportLocation": "Lucknow Uttar Pradesh"
-        }],
+      // demo : [ {
+      //   "airportId": 1,
+      //   "airportName": "Sardar Vallabhbhai Patel International Airport",
+      //   "airportLocation": "Ahmedabad Gujrat"
+      // },
+      //   {
+      //     "airportId": 2,
+      //     "airportName": "Chaudhary Charan Singh International Airport",
+      //     "airportLocation": "Lucknow Uttar Pradesh"
+      //   },
+      //   {
+      //     "airportId": 3,
+      //     "airportName": "Dr Babasaheb Ambedkar International Airport",
+      //     "airportLocation": "Nagpur Maharashtra"
+      //   },
+      //   {
+      //     "airportId": 4,
+      //     "airportName": "Chhatrapati Shivaji Maharaj International Airport",
+      //     "airportLocation": "Mumbai Maharashtra"
+      //   },
+      //   {
+      //     "airportId": 5,
+      //     "airportName": "Lal Bahadur Shastri International Airport",
+      //     "airportLocation": "Varanasi Uttar Pradesh"
+      //   },
+      //   {
+      //     "airportId": 6,
+      //     "airportName": "Chaudary Charan Singh Internation Airport",
+      //     "airportLocation": "Lucknow Uttar Pradesh"
+      //   }],
       airports : [],
       message : null
 

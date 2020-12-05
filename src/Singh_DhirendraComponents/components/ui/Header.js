@@ -87,7 +87,7 @@ export default function Header(props) {
     {name: "Admin", link:"/update", activeIndex:4},
     {name: "Your Bookings", link: "/user", activeIndex: 5},
     // {name: "Add flights", link: "/updateFlight", activeIndex: 6},
-    {name: "Schedule Flight", link: "/scheduleFlight", activeIndex: 6},
+    // {name: "Schedule Flight", link: "/scheduleFlight", activeIndex: 6},
   ]
 
 

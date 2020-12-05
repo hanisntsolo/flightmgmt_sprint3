@@ -9,39 +9,45 @@ class ListViewComp extends Component {
 
         this.state = {
                 scheduledFlight : [{
-                    entryNo: 1338989894,
-                    flight: {
-                        flightId: 15,
-                        carrierName: "IndiGo",
-                        flightModel: "6E-656",
-                        seatCapacity: 150
+                    "entryNo": 1338989894,
+                    "flight": {
+                        "flightId": 15,
+                        "carrierName": "IndiGo",
+                        "flightModel": "6E-656",
+                        "seatCapacity": 150
                     },
-                    availableSeats: 110,
-                    schedule: {
-                        sourceAirport: {
-                            airportId: 1256,
-                            airportName: "KOL",
-                            airportLocation: "Kolkata"
+                    "availableSeats": 110,
+                    "schedule": {
+                        "sourceAirport": {
+                            "airportId": 1256,
+                            "airportName": "KOL",
+                            "airportLocation": "Kolkata"
                         },
-                        destinationAirport: {
-                            airportId: 8967,
-                            airportName: "CHE",
-                            airportLocation: "Chennai"
+                        "destinationAirport": {
+                            "airportId": 8967,
+                            "airportName": "CHE",
+                            "airportLocation": "Chennai"
                         },
-                        arrivalTime: `2020-12-15T12:15:30`,
-                        departureTime: "2020-12-15T09:15:30",
-                        arrivalDate: "15-12-2020"
+                        "arrivalTime": `2020-12-15T12:15:30`,
+                        "departureTime": "2020-12-15T09:15:30",
+                        "arrivalDate": "15-12-2020"
                     },
-                    fares: 4532.0
-    }
-
-                ],
+                    "fares": 4532.0
+    }],
         }
         this.addScheduledFlight = this.addScheduledFlight.bind(this);
         this.editScheduledFlight = this.editScheduledFlight.bind(this);
         this.deleteScheduledFlight = this.deleteScheduledFlight.bind(this);
+        this.backClicked = this.backClicked.bind(this);
 
         
+    }
+    backClicked() {
+        console.log('update')
+        // const { history } = this.props;
+        // history.push(`/update/${id}`);
+        this.props.history.push('/update')
+        // this.props.history.push(`/update/${id}`)
     }
 
     deleteScheduledFlight(entryNo){
@@ -54,7 +60,7 @@ class ListViewComp extends Component {
     //     this.props.history.push(`/view-scheduledflig/${entryNo}`);
     // }
     editScheduledFlight(entryNo){
-        this.props.history.push(`/schedule/${entryNo}`);
+        this.props.history.push(`/updateFlight/${entryNo}`);
     }
 
     componentDidMount(){
@@ -82,7 +88,22 @@ class ListViewComp extends Component {
         return (
             <div>
                  <h2 className="text-center">Scheduled Flight List</h2>
-                 <div className = "row">
+                <section id="actions" className="py-4 mb-4 bg-light">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-2">
+                                <button className="btn btn-outline-primary btn-block" data-toggle="modal" onClick={this.backClicked}><i className="fas fa-plus"></i>
+                                    Go Back <svg width="1em" height="1em" viewBox="0 0 16 16" className="bi bi-arrow-90deg-left"
+                                                 fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd"
+                                              d="M1.146 4.854a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 4H12.5A2.5 2.5 0 0 1 15 6.5v8a.5.5 0 0 1-1 0v-8A1.5 1.5 0 0 0 12.5 5H2.707l3.147 3.146a.5.5 0 1 1-.708.708l-4-4z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div className = "row">
                     <Button variant="contained" color="secondary" onClick={this.addScheduledFlight}> Add Scheduled Flight</Button>
                  </div>
                  <br></br>
