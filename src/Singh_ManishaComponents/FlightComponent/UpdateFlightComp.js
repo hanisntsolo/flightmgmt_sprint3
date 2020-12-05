@@ -96,7 +96,7 @@ class UpdateFlightComp extends Component {
             </div>
           </div>
         </section>
-      <h1 >Add Flight</h1>
+      <h1 className="display-4">Update Flight</h1>
       <Row>
       <Col sm={4}>
         <Formik
