@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from  'react-router';
 class LogoutComp extends Component {
   constructor(props) {
     super(props);
@@ -15,5 +14,4 @@ class LogoutComp extends Component {
     );
   }
 }
-// export default withRouter(LogoutComp);
 export default LogoutComp;

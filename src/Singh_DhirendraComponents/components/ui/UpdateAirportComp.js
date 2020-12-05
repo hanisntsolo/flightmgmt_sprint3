@@ -16,15 +16,10 @@ class UpdateAirportComp extends Component {
   }
   backClicked() {
     console.log('update')
-    // const { history } = this.props;
-    // history.push(`/update/${id}`);
     this.props.history.push('/update')
-    // this.props.history.push(`/update/${id}`)
   }
   validate(values) {
-    // let errors = {airportName: 'Airport Name should be Alphabetical', airportLocation: 'Airport Location should be Alphabetical'}
     let errors = {}
-    // const letters = /^[A-Za-z]+$/;
     const letters = /^[A-Za-z ]+$/;
     if (!values.airportName) {
       errors.airportName = 'Enter a description'
@@ -61,7 +56,6 @@ class UpdateAirportComp extends Component {
       AirportService.retrieveAirport(this.state.id)
       .then(
           response =>
-              // console.log(response)
               this.setState({
                 airportName : response.data.airportName,
                 airportLocation : response.data.airportLocation
@@ -72,7 +66,6 @@ class UpdateAirportComp extends Component {
 
   render() {
     let {airportName, airportLocation} = this.state;
-    // let airportLocation = this.state.airportLocation;
     return(
         <div>
           <h1 className="display-1">Update Airport</h1>
@@ -101,19 +94,6 @@ class UpdateAirportComp extends Component {
                 onSubmit={this.onSubmit}>
               {
                 (props => (
-                    // <Form>
-                    //   <ErrorMessage name="airportName" component="div" className="alert alert-warning"/>
-                    //   <ErrorMessage name="airportLocation" component="div" className="alert alert-warning"/>
-                    //   <fieldset className="form-group">
-                    //     <label>Airport Name</label>
-                    //     <Field className="form-control" type="text" name="airportName"/>
-                    //   </fieldset>
-                    //   <fieldset className="form-group">
-                    //     <label>Airport Location</label>
-                    //     <Field className="form-control" type="text" name="airportLocation"/>
-                    //   </fieldset>
-                    //   <button className="btn btn-success" type="submit">Save</button>
-                    // </Form>
                     <Form>
                       <ErrorMessage name="airportName" component="div" className="alert alert-warning"/>
                       <ErrorMessage name="airportLocation" component="div" className="alert alert-warning"/>
@@ -146,21 +126,13 @@ class UpdateAirportComp extends Component {
                       <div className="input-group mb-3 ">
                         <button className="btn btn-success btn-block form-control" type="submit">Update</button>
                         <div className="input-group-append">
-                          {/*<button className="btn btn-warning btn-block" type="reset">Reset</button>*/}
                         </div>
                       </div>
-                      {/*<div className="input-group mb-3 ">*/}
-                      {/*  <div className="input-group-append">*/}
-                      {/*  <button className="btn btn-success btn-block " type="submit">Save</button>*/}
-                      {/*  </div>*/}
-                      {/*    <button className="btn btn-warning btn-block form-control" type="reset">Reset</button>*/}
-                      {/*</div>*/}
                     </Form>
                 ))
               }
             </Formik>
           </div>
-          {/*<div>Update Airport for id - {this.props.match.params.id}</div>*/}
         </div>
           );
   }

@@ -3,7 +3,6 @@ const arcBlue = "#FFFFFF";
 const arcDark = "#424242"
 const arcGem = "#A6C0FE"
 const arcRad = "#745AE7"
-// const arcDark = "#17223b"
 export default createMuiTheme({
   palette: {
     common: {

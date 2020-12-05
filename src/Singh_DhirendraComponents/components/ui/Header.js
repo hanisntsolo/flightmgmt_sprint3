@@ -10,7 +10,6 @@ import logo from '../../assets/Airplane_PNG_Clipart-421.svg';
 import { Link } from 'react-router-dom';
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
-import { withRouter } from 'react-router';
 import AuthenticationService from "../Authentication/AuthenticationService";
 
 const useStyles = makeStyles(
@@ -39,14 +38,9 @@ const useStyles = makeStyles(
 );
 export default function Header(props) {
   const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
-  // console.log(isUserLoggedIn);
   const classes = useStyles();
-  //Do not delete this piece of code
-  // const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [open, setOpen] = useState(false);
-  //Do not delete this piece of code
-  // const [selectedIndex, setSelectedIndex] = useState(0);
   const handleChange = (e, value) => {
     props.setValue(value);
   };
@@ -86,8 +80,6 @@ export default function Header(props) {
     {name: "About", link:"/about", activeIndex:3},
     {name: "Admin", link:"/update", activeIndex:4},
     {name: "Your Bookings", link: "/user", activeIndex: 5},
-    // {name: "Add flights", link: "/updateFlight", activeIndex: 6},
-    // {name: "Schedule Flight", link: "/scheduleFlight", activeIndex: 6},
   ]
 
 
@@ -106,55 +98,7 @@ export default function Header(props) {
           break;
       }
     });
-    // if (window.location.pathname === "/" && value!==0) {
-    //   setValue(0);
-    // } else if (window.location.pathname === "/search" && value!==1) {
-    //   setValue(1);
-    // } else if (window.location.pathname === "/faq" && value!==2) {
-    //   setValue(2);
-    // } else if (window.location.pathname === "/about" && value!==3) {
-    //   setValue(3);
-    // } else if (window.location.pathname === "/contactus" && value!==4) {
-    //   setValue(4);
-    // }
-    // switch (window.location.pathname) {
-    //   case "/":
-    //     if (value !== 0) {
-    //       setValue(0);
-    //     }
-    //     break;
-    //   case "/faq":
-    //     if (value !== 2) {
-    //       setValue(2);
-    //       setSelectedIndex(1);
-    //     }
-    //     break;
-    //   case "/faq/pricing":
-    //     if (value !== 2) {
-    //       setValue(2);
-    //       setSelectedIndex(2)
-    //     }
-    //     break;
-    //   case "/faq/ticket-cancellation":
-    //     if (value !== 2) {
-    //       setValue(2);
-    //       setSelectedIndex(3)
-    //     }
-    //     break;
-    //   case "/faq/booking":
-    //     if (value !== 2) {
-    //       setValue(2);
-    //       setSelectedIndex(4)
-    //     }
-    //     break;
-    //   case "/faq/popular-queries":
-    //     if (value !== 2 ) {
-    //       setValue(2);
-    //       setSelectedIndex(5);
-    //     }
-    //     break;
-    //   default:
-    //     break;}
+
 
 }, [props.value, menuOptions, props.selectedIndex, routes, props]);
 
@@ -182,17 +126,6 @@ export default function Header(props) {
                          aria-haspopup={route.ariaPopup}
                          onMouseOver={route.mouseOver}/>
                 ))}
-                {/*<Tab className={classes.tab} component={Link} to="/" label="Home"/>*/}
-                {/*<Tab className={classes.tab} component={Link} to="/search" label="Search"/>*/}
-                {/*<Tab*/}
-                {/*    aria-owns={anchorEl ? "faq-menu" : undefined}*/}
-                {/*    aria-haspopup={anchorEl ? "true" : undefined}*/}
-                {/*    className={classes.tab}*/}
-                {/*    component={Link} to="/faq"*/}
-                {/*    onMouseOver={event=>handleClick(event)}*/}
-                {/*    label="FAQ's"/>*/}
-                {/*<Tab className={classes.tab} component={Link} to="/about" label="About"/>*/}
-                {/*<Tab className={classes.tab} component={Link} to="/contactus" label="Contact Us"/>*/}
               </Tabs>
               <Menu id="faq-menu"
                     anchorEl={anchorEl}

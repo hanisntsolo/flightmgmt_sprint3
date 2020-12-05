@@ -15,9 +15,7 @@ class CreateAirportComp extends Component {
     this.backClicked = this.backClicked.bind(this);
   }
   validate(values) {
-    // let errors = {airportName: 'Airport Name should be Alphabetical', airportLocation: 'Airport Location should be Alphabetical'}
     let errors = {}
-    // const letters = /^[A-Za-z]+$/;
     const letters = /^[A-Za-z ]+$/;
     if (!values.airportName) {
       errors.airportName = 'Enter a description'
@@ -43,30 +41,11 @@ class CreateAirportComp extends Component {
     }
   backClicked() {
     console.log('update')
-    // const { history } = this.props;
-    // history.push(`/update/${id}`);
     this.props.history.push('/update')
-    // this.props.history.push(`/update/${id}`)
   }
-  // componentDidMount() {
-  //   if (this.state.id === null) {
-  //     return
-  //   } else {
-  //     AirportService.retrieveAirport(this.state.id)
-  //     .then(
-  //         response =>
-  //             // console.log(response)
-  //             this.setState({
-  //               airportName : response.data.airportName,
-  //               airportLocation : response.data.airportLocation
-  //             })
-  //     )
-  //   }
-  // }
 
   render() {
     let {airportName, airportLocation} = this.state;
-    // let airportLocation = this.state.airportLocation;
     return(
         <div>
           <h1 className="display-1">Add Airport</h1>
@@ -123,19 +102,11 @@ class CreateAirportComp extends Component {
                           <button className="btn btn-warning btn-block" type="reset">Reset</button>
                         </div>
                       </div>
-                      {/*<div className="input-group mb-3 ">*/}
-                      {/*  <div className="input-group-append">*/}
-                      {/*  <button className="btn btn-success btn-block " type="submit">Save</button>*/}
-                      {/*  </div>*/}
-                      {/*    <button className="btn btn-warning btn-block form-control" type="reset">Reset</button>*/}
-                      {/*</div>*/}
                     </Form>
-
                 ))
               }
             </Formik>
           </div>
-          {/*<div>Update Airport for id - {this.props.match.params.id}</div>*/}
         </div>
     );
   }

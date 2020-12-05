@@ -8,7 +8,6 @@ class AuthenticationService {
   }
   isUserLoggedIn() {
     let user = sessionStorage.getItem('Authenticated User')
-    // return user===null
     if (user===null) {
       return false
     }
@@ -17,4 +16,5 @@ class AuthenticationService {
     }
   }
 }
+
 export default new AuthenticationService();

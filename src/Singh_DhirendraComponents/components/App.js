@@ -40,7 +40,6 @@ function App() {
             <Header value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex}/>
               <Switch>
                 <div>
-
                   {/*Singh Dhirendra Routes*/}
                   <Route exact path="/login" component={()=><div style={{height:"1500px"}}><LoginComp/></div>}/>
                   <AuthenticatedRoute exact path="/logout" component={()=><div style={{height:"1500px"}}><LogoutComp/></div>}/>
@@ -56,24 +55,19 @@ function App() {
                   <AuthenticatedRoute exact path="/about" component={()=><div style={{height:"1500px"}}><About/></div>}/>
                   <AuthenticatedRoute exact path="/create" component={()=><div style={{height:"700px"}}><CreateAirportComp/></div>}/>
                   <AuthenticatedRoute exact path="/update/:id" component={()=><div style={{height:"700px"}}><UpdateAirportComp/></div>}/>
-                  {/*<AuthenticatedRoute exact path="/update" component={()=><div style={{height:"1500px"}}><ListAirports/></div>}/>*/}
                   <AuthenticatedRoute exact path="/update" component={ListAirports}/>
 
                   {/*Suchita Soni Routes*/}
                   <AuthenticatedRoute exact path="/scheduleFlight" component={()=><div style={{height:"1500px"}}><ListViewComp/></div>}/>
                   <AuthenticatedRoute exact path="/schedule" component={CreateNewComp}/>
-                  {/*<AuthenticatedRoute  path="/schedule/:entryNo" component={UpdateComp}/>*/}
 
                   {/*Anisha Gupta Routes*/}
                   <AuthenticatedRoute exact path="/search" component={()=><div style={{height:"1500px"}}><SearchBox/></div>}/>
                   <AuthenticatedRoute exact path="/user" component={()=><div style={{height:"1500px"}}><BookingList/></div>}/>
 
                   {/*Singh Manisha Routes*/}
-                  <AuthenticatedRoute exact path="/updateFlight/:flightId" component={UpdateFlightComp}/>
-                  <AuthenticatedRoute  path="/createFlight" component={CreateFlightComp}/>
-                  {/*<AuthenticatedRoute exact path="/updateFlight/:flightId" component={UpdateFlightComp}/>*/}
-
-
+                  <AuthenticatedRoute exact path="/updateFlight/:flightId" component={()=><div style={{height:"1500px"}}><UpdateFlightComp/></div>}/>
+                  <AuthenticatedRoute  path="/createFlight" component={()=><div style={{height:"1500px"}}><CreateFlightComp/></div>}/>
                   <Route exact path="/updateFlight" component={()=><div style={{height:"1500px"}}><ListFlight/></div>}/>
 
                   {/*Bhatia Jigyasa Routes*/}
@@ -82,7 +76,6 @@ function App() {
 
                   {/*Shukla Pranshi Routes*/}
                   {/*No routes yet*/}
-
                   {/*<AuthenticatedRoute exact path="/update/:id" component={()=><div style={{height:"1500px"}}><UpdateAirportComp/></div>}/>*/}
                 </div>
               </Switch>

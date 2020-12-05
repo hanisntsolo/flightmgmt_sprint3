@@ -11,7 +11,6 @@ const useStyles = makeStyles(
       },
       title : {
         paddingLeft : "0vw"
-
       }
     })
 );
